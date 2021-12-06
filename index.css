@@ -1,0 +1,135 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    background-color: #DDD;
+    font-family: Tahoma;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.grid-item {
+    
+    background-color: white;
+    margin: 20px;
+    width: 400px;
+
+    box-shadow: 5px 5px #CCC;
+
+    overflow: hidden;
+
+
+}
+
+.grid-item .img {
+    
+    height: 270px;
+
+}
+
+.grid-item img {
+    
+    display: block;
+    border-width: 0px;
+ 
+}
+
+.grid-item h2 {
+
+    font-size: 1.2em;
+
+}
+
+.grid-item p {
+
+    font-size: 0.8em;
+
+}
+
+.grid-item .words {
+
+    width: 100%;
+    padding: 1em;
+
+}
+
+.words p {
+
+    height: 50px;
+
+}
+
+button {
+    
+    padding: 0.5em;
+    font-size: 1.2em;
+    border-width: 0;
+    color: white;
+
+}
+
+.filters {
+
+    margin: 20px;
+    position: sticky;
+    top: 0;
+    background-color: #DDD;
+    z-index: 20;
+    padding-bottom: 10px;
+
+}
+
+.filter-on {
+
+    background-color: darkseagreen;
+
+}
+
+.filter-off {
+
+    background-color:indianred;
+
+}
+
+.filter-health-hide .filter-health {
+    display: none;
+}
+
+.filter-animals-hide .filter-animals {
+    display: none;
+}
+
+.filter-env-hide .filter-env {
+    display: none;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .grid-item {
+    
+        margin: 5px;
+        width: 300px;
+    
+        box-shadow: 2px 2px #CCC;    
+    
+    }
+
+    .filters {
+
+        width: 100%;
+        margin: 0px;
+        padding: 5px;
+
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+}
