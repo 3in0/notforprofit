@@ -3,10 +3,27 @@ clicked = function( e ) {
 
 	let anId = e.currentTarget.getAttribute( "id" );
 
-	$( "#" + anId ).toggleClass( "filter-on" );
-	$( "#" + anId ).toggleClass( "filter-off" );
+	if ( $( "#" + anId ).hasClass( "filter-on" ) )
+		return;
 
-	$( "#grid" ).toggleClass( anId + "-hide" );
+	for ( let aCat of [ 'all', 'health', 'animals', 'env' ] ) {
+
+		$( "#filter-" + aCat ).toggleClass( "filter-on", false );
+		$( "#filter-" + aCat ).toggleClass( "filter-off", true );
+
+		if ( anId == 'filter-all' )
+			$( "#grid" ).toggleClass( "filter-" + aCat + "-hide", false );
+		else
+			$( "#grid" ).toggleClass( "filter-" + aCat + "-hide", true );
+
+
+	}
+
+	$( "#" + anId ).toggleClass( "filter-on", true );
+	$( "#" + anId ).toggleClass( "filter-off", false );
+//	$( "#" + anId ).toggleClass( "filter-off" );
+
+	$( "#grid" ).toggleClass( anId + "-hide", false );
 	
 	window.m.layout();
 
