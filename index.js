@@ -39,11 +39,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	let aWindowWidth = window.innerWidth;
 
 	if ( aWindowWidth <= 500 ) {
-		$( "img" ).attr( "width", aWindowWidth - 10 )
+		$( "img" ).attr( "width", aWindowWidth  )
 		$( ".grid-item .img" ).css( "height", aWindowWidth * 0.66667 );
-		$( ".grid-item" ).css( "width", aWindowWidth - 10 )
+		$( ".grid-item" ).css( "width", aWindowWidth )
 
-		aWidth = aWindowWidth - 10;
+		aWidth = aWindowWidth ;
 
 	}
 

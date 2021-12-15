@@ -63,12 +63,29 @@ body {
 
 }
 
+/*
 button {
     
     padding: 0.5em;
     font-size: 1.2em;
     border-width: 0;
     color: white;
+
+}
+*/
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid #ddd;
+    color: #ddd;
+    text-decoration: none;
+    margin: 0px 10px 10px 0;
+    transition: all .6s;
+    min-width: 100px;
+    text-align: center;
+    border-color: #2C3E50;
+    color: #2C3E50;
 
 }
 
@@ -83,15 +100,10 @@ button {
 
 }
 
-.filter-on {
-
-    background-color: darkseagreen;
-
-}
-
 .filter-off {
 
-    background-color:indianred;
+    background: #2C3E50;
+    color: #fff;
 
 }
 
@@ -111,11 +123,9 @@ button {
 
     .grid-item {
     
-        margin: 5px;
-        width: 300px;
-    
-        box-shadow: 2px 2px #CCC;    
-    
+        margin: 0px;
+        width: 100%;
+        
     }
 
     .filters {
