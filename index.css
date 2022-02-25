@@ -119,6 +119,10 @@ button {
     display: none;
 }
 
+.filter-education-hide .filter-education {
+    display: none;
+}
+
 @media only screen and (max-width: 500px) {
 
     .grid-item {

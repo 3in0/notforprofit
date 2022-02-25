@@ -6,7 +6,7 @@ clicked = function( e ) {
 	if ( $( "#" + anId ).hasClass( "filter-on" ) )
 		return;
 
-	for ( let aCat of [ 'all', 'health', 'animals', 'env' ] ) {
+	for ( let aCat of [ 'all', 'health', 'animals', 'env', 'education' ] ) {
 
 		$( "#filter-" + aCat ).toggleClass( "filter-on", false );
 		$( "#filter-" + aCat ).toggleClass( "filter-off", true );
