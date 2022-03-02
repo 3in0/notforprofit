@@ -6,7 +6,7 @@ clicked = function( e ) {
 	if ( $( "#" + anId ).hasClass( "filter-on" ) )
 		return;
 
-	for ( let aCat of [ 'all', 'health', 'animals', 'env', 'education' ] ) {
+	for ( let aCat of [ 'all', 'health', 'animals', 'environment', 'education' ] ) {
 
 		$( "#filter-" + aCat ).toggleClass( "filter-on", false );
 		$( "#filter-" + aCat ).toggleClass( "filter-off", true );
@@ -30,10 +30,33 @@ clicked = function( e ) {
 
 }
 
+loadData = function( someData ) {
 
-document.addEventListener("DOMContentLoaded", function(event) { 
+	for ( let aPackage of someData ) {
 
-	//return;
+		let aElement = `<div class="grid-item filter-${ aPackage.tag }">
+			
+		<div class="img">
+			<img src="thumbs/${ aPackage.thumb }.png"/>
+		</div>
+
+		<div class="words">
+			<h2>${ aPackage.title}</h2>
+			<p>${ aPackage.blurb }</p>
+			<a href="https://${ aPackage.url }/" target="newTab">${ aPackage.url }</a>
+		</div>
+		</div>`;
+
+		$( "#grid" ).append( aElement );
+
+	}
+
+
+}
+
+const initialise = function( someData ) {
+
+	loadData( someData );
 
 	let aWidth = 440;
 	let aWindowWidth = window.innerWidth;
@@ -52,6 +75,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	  });
 
 	  $( "button" ).on( "click", clicked );
+
+}
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+
+	//return;
+
+	
+	let someOptions = {
+		url: 'data.json',
+		dataType: "json",
+		cache: false,
+		crossDomain: true,
+		xhrFields: {
+			withCredentials: true
+		}
+
+	}
+
+	$.ajax(someOptions).done( initialise ).fail( function () { console.log("data call failed") });
+
+
 
 } );
 
